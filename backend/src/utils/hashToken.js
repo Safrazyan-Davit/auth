@@ -1,6 +1,5 @@
-import bcrypt from "bcryptjs";
+import crypto from "crypto";
 
 export const hashToken = async (token) => {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(token, salt);
+    return crypto.createHash("sha256").update(token).digest("hex");
 };

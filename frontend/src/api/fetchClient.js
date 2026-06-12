@@ -64,7 +64,7 @@ export async function fetchClient(url, options = {}, _retry = false) {
 
             // retry original request ONCE
             return fetchClient(url, options, true);
-        } catch (err) {
+        } catch {
             return response;
         }
     }
