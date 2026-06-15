@@ -14,6 +14,14 @@ router.post("/register", register);
 router.post("/login", login);
 router.post("/refresh", refresh);
 router.post("/logout", logout);
-router.get("/me", authMiddleware, me);
+
+router.use(authMiddleware);
+
+router.get("/me", me);
+
+
+
+
+
 
 export default router;
